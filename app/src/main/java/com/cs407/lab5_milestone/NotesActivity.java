@@ -3,7 +3,9 @@ package com.cs407.lab5_milestone;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,7 +18,8 @@ public class NotesActivity extends AppCompatActivity {
 
     private TextView welcomeTextView;
     private ListView notesListView;
-
+    private SharedPreferences sharedPreferences;
+    private TextView usernameTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,8 +27,11 @@ public class NotesActivity extends AppCompatActivity {
 
         welcomeTextView = findViewById(R.id.welcomeTextView);
 
-        Intent intent = getIntent();
-        String username = intent.getStringExtra("username");
+        //Intent intent = getIntent();
+        //String username = intent.getStringExtra("username");
+
+        SharedPreferences sharedPreferences = getSharedPreferences("com.cs407.lab5_milestone", Context.MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", "");
 
         String welcomeMessage = "Welcome " + username + " to Notes App!";
         welcomeTextView.setText(welcomeMessage);
@@ -33,6 +39,7 @@ public class NotesActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         notesListView = findViewById(R.id.notesListView);
+
 
     }
 
