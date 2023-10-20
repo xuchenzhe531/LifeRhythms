@@ -56,7 +56,9 @@ public class NotesActivity extends AppCompatActivity {
 
             return true;
         } else if (id == R.id.action_logout) {
-
+            SharedPreferences sharedPreferences = getSharedPreferences("com.cs407.lab5_milestone", Context.MODE_PRIVATE);
+            String username = sharedPreferences.getString("username", "");
+            sharedPreferences.edit().clear().apply();
             Intent intent = new Intent(this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
