@@ -4,29 +4,25 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editTextNote"
+        android:id="@+id/noteEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter note here"
-        android:inputType="textMultiLine" />
+        android:hint="Enter your note here"/>
 
     <Button
-        android:id="@+id/buttonSave"
+        android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextNote"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="506dp"
-        android:text="Save" />
+        android:text="Save"
+        android:layout_below="@id/noteEditText"
+        android:layout_alignParentStart="true"/>
 
     <Button
-        android:id="@+id/buttonDelete"
+        android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextNote"
-        android:layout_marginStart="149dp"
-        android:layout_marginTop="502dp"
-        android:layout_toEndOf="@id/buttonSave"
-        android:text="Delete" />
+        android:text="Delete"
+        android:layout_below="@id/noteEditText"
+        android:layout_alignParentEnd="true"/>
 </RelativeLayout>
+
