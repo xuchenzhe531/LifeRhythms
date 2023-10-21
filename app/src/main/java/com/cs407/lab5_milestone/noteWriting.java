@@ -67,16 +67,6 @@ public class noteWriting extends AppCompatActivity {
             noteEditText.setText(noteContent);
         }
 
-//        // 按钮点击事件，用于返回到Screen2
-//        View.OnClickListener clickListener = new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // 此处会添加实际的保存和删除逻辑
-//                // 目前，只是简单地返回到Screen2
-//                Intent intent = new Intent(NoteWritingActivity.this, NotesActivity.class);  // 假设您的第二个屏幕Activity名称为Screen2
-//                startActivity(intent);
-//            }
-//        };
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,7 +126,7 @@ public class noteWriting extends AppCompatActivity {
             Intent intent = new Intent(this, NotesActivity.class);
             startActivity(intent);
         } else {
-            Toast.makeText(this, "No note to delete", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show();
         }
         finish();
     }
