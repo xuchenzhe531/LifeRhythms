@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/add_note"
-        android:title="Add Note"
+        android:title="Add ToDo"
         android:orderInCategory="100"
         app:showAsAction="never" />
     <item
