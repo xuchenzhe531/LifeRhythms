@@ -11,4 +11,9 @@
         android:title="Logout"
         android:orderInCategory="101"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/backtowelcome"
+        android:title="Back To Main"
+        android:orderInCategory="102"
+        app:showAsAction="never" />
 </menu>

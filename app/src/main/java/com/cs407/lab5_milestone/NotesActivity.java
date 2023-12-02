@@ -101,7 +101,11 @@ public class NotesActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
             return true;
-        } else {
+        }else if(id==R.id.backtowelcome){
+            Intent intent = new Intent(this, WelcomePage.class);
+            startActivity(intent);
+            return true;
+    }   else {
             return super.onOptionsItemSelected(item);
         }
 
