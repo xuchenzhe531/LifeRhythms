@@ -60,8 +60,8 @@ public class WelcomePage extends AppCompatActivity {
             public void onClick(View v) {
                 if (allCheckBoxesChecked()) {
                     // Launch an activity for Start
-                    //Intent intent = new Intent(MainActivity.this, StartActivity.class);
-                    //startActivity(intent);
+                    Intent intent = new Intent(WelcomePage.this, Timer.class);
+                    startActivity(intent);
                 } else {
                     showCheckboxWarning();
                 }
