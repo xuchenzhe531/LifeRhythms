@@ -87,10 +87,24 @@ public class noteWriting extends AppCompatActivity {
 
     public void saveMethod() {
         String content = noteEditText.getText().toString();
+        String desireDate;
+        String StartTime;
+        String endTime;
+        String todo;
+        String category;
+        String[] parts = content.split("\\*");
+        desireDate = parts[0];
+        StartTime = parts[1];
+        endTime = parts[2];
+        todo = parts[3];
+        category = parts[4];
 
         Context context = getApplicationContext();
         SQLiteDatabase sqLiteDatabase = context.openOrCreateDatabase("notes", Context.MODE_PRIVATE, null);
         DBHelper dbHelper = new DBHelper(sqLiteDatabase);
+
+        SQLiteDatabase sqLiteDatabaseC = context.openOrCreateDatabase("calendars", Context.MODE_PRIVATE, null);
+        CalendarDBHelper CalendardbHelper = new CalendarDBHelper(sqLiteDatabaseC);
 
         SharedPreferences sharedPreferences = getSharedPreferences("com.cs407.lab5_milestone", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "");
@@ -100,11 +114,13 @@ public class noteWriting extends AppCompatActivity {
         String date = dateFormat.format(new Date());
 
         if (noteid == -1) {
-            title = "NOTES_" + (NotesActivity.note.size() + 1);
+            title = "CALENDAR_" + (NotesActivity.note.size() + 1);
             dbHelper.saveNotes(username, title, content, date);
+            CalendardbHelper.saveCalendars(username,date,title,desireDate,StartTime,endTime,todo,category);
         } else {
-            title = "NOTES_" + (noteid + 1);
+            title = "CALENDAR_" + (noteid + 1);
             dbHelper.updateNote(title, date, content, username);
+            CalendardbHelper.updateCalendar(username,date,title,desireDate,StartTime,endTime,todo,category);
         }
 
         Intent intent = new Intent(this, NotesActivity.class);
@@ -118,10 +134,25 @@ public class noteWriting extends AppCompatActivity {
             SQLiteDatabase sqLiteDatabase = context.openOrCreateDatabase("notes", Context.MODE_PRIVATE, null);
             DBHelper dbHelper = new DBHelper(sqLiteDatabase);
 
-            String title = "NOTES_" + (noteid + 1);
+            SQLiteDatabase sqLiteDatabaseC = context.openOrCreateDatabase("calendars", Context.MODE_PRIVATE, null);
+            CalendarDBHelper CalendardbHelper = new CalendarDBHelper(sqLiteDatabaseC);
+
+            String title = "CALENDAR_" + (noteid + 1);
             String content = noteEditText.getText().toString();
+            String desireDate;
+            String StartTime;
+            String endTime;
+            String todo;
+            String category;
+            String[] parts = content.split("\\*");
+            desireDate = parts[0];
+            StartTime = parts[1];
+            endTime = parts[2];
+            todo = parts[3];
+            category = parts[4];
 
             dbHelper.deleteNotes(content, title);
+            CalendardbHelper.deleteCalendars(desireDate,StartTime,endTime,todo,category,title);
 
             Intent intent = new Intent(this, NotesActivity.class);
             startActivity(intent);

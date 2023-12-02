@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!enteredUsername.equals("")) {
                     sharedPreferences.edit().putString("username", enteredUsername).apply();
 
-                    Intent intent = new Intent(MainActivity.this, NotesActivity.class);
+                    Intent intent = new Intent(MainActivity.this, WelcomePage.class);
                     startActivity(intent);
                     finish();
                 } else {
@@ -58,5 +58,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
 
