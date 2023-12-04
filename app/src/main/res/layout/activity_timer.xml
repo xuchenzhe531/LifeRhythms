@@ -3,6 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/timetrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/creativeTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="Welcome to the Timer."
+        android:textAlignment="center"
+        android:textSize="34sp" />
+    <TextView
+        android:id="@+id/creativeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/timePicker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="#2196F3"
+        android:text="It is recommended that you could take a 10-minutes break after you work 40 minutes."
+        android:textAlignment="center"
+        android:textSize="18sp" />
     <TimePicker
         android:id="@+id/timePicker"
         android:layout_width="wrap_content"
@@ -35,4 +56,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Back"/>
+
 </RelativeLayout>

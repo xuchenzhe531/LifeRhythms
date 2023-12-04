@@ -29,7 +29,5 @@
         android:layout_below="@+id/welcomeText"
         android:layout_marginTop="16dp" />
 
-    <!-- 其他UI元素如RecyclerView等可根据需要添加 -->
-
 </RelativeLayout>
 

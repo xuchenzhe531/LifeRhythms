@@ -3,18 +3,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<!--    <EditText-->
+<!--        android:id="@+id/noteEditText"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter your note here"/>-->
     <EditText
-        android:id="@+id/noteEditText"
+        android:id="@+id/dateEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your note here"/>
+        android:hint="Enter Date"/>
+
+    <EditText
+        android:id="@+id/startTimeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateEditText"
+        android:hint="Enter Start Time"/>
+
+    <EditText
+        android:id="@+id/endTimeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startTimeEditText"
+        android:hint="Enter End Time"/>
+
+    <EditText
+        android:id="@+id/todoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/endTimeEditText"
+        android:hint="Todo"/>
+
+    <Spinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/todoEditText"/>
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:layout_below="@id/noteEditText"
+        android:layout_below="@id/categorySpinner"
         android:layout_alignParentStart="true"/>
 
     <Button
@@ -22,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Delete"
-        android:layout_below="@id/noteEditText"
+        android:layout_below="@id/categorySpinner"
         android:layout_alignParentEnd="true"/>
 </RelativeLayout>
 
