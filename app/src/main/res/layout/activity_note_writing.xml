@@ -12,21 +12,21 @@
         android:id="@+id/dateEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Date"/>
+        android:hint="Enter Date Format: YYYY/MM/DD"/>
 
     <EditText
         android:id="@+id/startTimeEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/dateEditText"
-        android:hint="Enter Start Time"/>
+        android:hint="Enter Start Time  HH:MM like 13:00"/>
 
     <EditText
         android:id="@+id/endTimeEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/startTimeEditText"
-        android:hint="Enter End Time"/>
+        android:hint="Enter End Time HH:MM like 13:00"/>
 
     <EditText
         android:id="@+id/todoEditText"
