@@ -47,8 +47,8 @@ public class WelcomePage extends AppCompatActivity {
             public void onClick(View v) {
                 if (allCheckBoxesChecked()) {
                     // Launch an activity for ShowMyWork
-                    //Intent intent = new Intent(MainActivity.this, ShowMyWorkActivity.class);
-                    //startActivity(intent);
+                    Intent intent = new Intent(WelcomePage.this, ScheduleListActivity.class);
+                    startActivity(intent);
                 } else {
                     showCheckboxWarning();
                 }

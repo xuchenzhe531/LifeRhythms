@@ -1,6 +1,9 @@
 package com.cs407.lab5_milestone;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 public class CalendarDBHelper {
@@ -66,5 +69,29 @@ public class CalendarDBHelper {
         sqLiteDatabase.execSQL("DELETE FROM calendars WHERE desiredDate = ? AND StartTime = ? AND EndTime=?AND todo=?AND category=? AND date = ?",
                 new String[]{desiredDate,StartTime,EndTime,todo,category, date});
         cursor.close();
+    }
+    public List<ScheduleItem> getScheduleForDate(String date, String username){
+        List<ScheduleItem> scheduleItems = new ArrayList<>();
+        String[] columns = {"desiredDate", "StartTime", "EndTime", "todo"};
+        String selection = "desiredDate = ? AND username = ?";
+        String[] selectionArgs = { date, username };
+        Cursor cursor = sqLiteDatabase.query("calendars", columns, selection, selectionArgs, null, null, null);
+        if (cursor.moveToFirst()) {
+            do {
+                @SuppressLint("Range") String scheduleDate = cursor.getString(cursor.getColumnIndex("desiredDate"));
+                @SuppressLint("Range") String startTime = cursor.getString(cursor.getColumnIndex("StartTime"));
+                @SuppressLint("Range") String endTime = cursor.getString(cursor.getColumnIndex("EndTime"));
+                @SuppressLint("Range") String item = cursor.getString(cursor.getColumnIndex("todo"));
+
+                ScheduleItem scheduleItem = new ScheduleItem(scheduleDate,startTime,endTime,item);
+
+                scheduleItems.add(scheduleItem);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return scheduleItems;
+
+
     }
 }
