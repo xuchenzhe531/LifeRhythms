@@ -53,7 +53,7 @@ public class CalendarDBHelper {
     }
     public void updateCalendar(String username, String date, String title, String desiredDate,String StartTime,String EndTime,String todo,String category) {
         createTable();
-        sqLiteDatabase.execSQL("UPDATE notes set desiredDate = ?,StartTime = ?, EndTime=?,todo=?,category=?,date = ? where title = ? and username = ?",
+        sqLiteDatabase.execSQL("UPDATE calendars set desiredDate = ?,StartTime = ?, EndTime=?,todo=?,category=?,date = ? where title = ? and username = ?",
                 new String[]{desiredDate,StartTime,EndTime,todo,category, date, title, username});
     }
     public void deleteCalendars( String desiredDate,String StartTime,String EndTime,String todo,String category, String title) {

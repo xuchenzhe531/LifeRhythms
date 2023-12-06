@@ -68,7 +68,7 @@ public class NotesActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), noteWriting.class);
-                intent.putExtra("noteid", String.valueOf(position));
+                intent.putExtra("noteid", String.valueOf(position+1));
                 startActivity(intent);
             }
         });
