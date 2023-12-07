@@ -18,9 +18,6 @@
             android:name=".ScheduleListActivity"
             android:exported="false" />
         <activity
-            android:name=".MyPieChartActivity"
-            android:exported="false" />
-        <activity
             android:name=".Timer"
             android:exported="true" />
         <activity
