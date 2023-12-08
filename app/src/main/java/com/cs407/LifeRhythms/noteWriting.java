@@ -130,7 +130,7 @@ public class noteWriting extends AppCompatActivity {
         SQLiteDatabase sqLiteDatabaseC = context.openOrCreateDatabase("calendars", Context.MODE_PRIVATE, null);
         CalendarDBHelper CalendardbHelper = new CalendarDBHelper(sqLiteDatabaseC);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("com.cs407.lab5_milestone", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("com.cs407.LifeRhythms", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "");
 
         String title;

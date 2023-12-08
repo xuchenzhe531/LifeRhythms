@@ -33,7 +33,7 @@ public class NotesActivity extends AppCompatActivity {
 
         welcomeTextView = findViewById(R.id.welcomeText);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("com.cs407.lab5_milestone", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("com.cs407.LifeRhythms", MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "");
 
         if (!username.isEmpty()) {
@@ -94,7 +94,7 @@ public class NotesActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         } else if (id == R.id.logout) {
-            SharedPreferences sharedPreferences = getSharedPreferences("com.cs407.lab5_milestone", MODE_PRIVATE);
+            SharedPreferences sharedPreferences = getSharedPreferences("com.cs407.LifeRhythms", MODE_PRIVATE);
             String username = sharedPreferences.getString("username", "");
             sharedPreferences.edit().clear().apply();
             Intent intent = new Intent(NotesActivity.this, MainActivity.class);
