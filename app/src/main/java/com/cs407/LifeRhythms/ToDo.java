@@ -1,14 +1,14 @@
 package com.cs407.LifeRhythms;
 
 public class ToDo {
-    private String username;
-    private String title;
-    private String date;
-    private String desiredDate;
-    private String startTime;
-    private String endTime;
-    private String todo;
-    private String category;
+    private final String username;
+    private final String title;
+    private final String date;
+    private final String desiredDate;
+    private final String startTime;
+    private final String endTime;
+    private final String todo;
+    private final String category;
     public ToDo(String username, String title, String date, String desiredDate, String startTime, String endTime, String todo, String category){
         this.username = username;
         this.title=title;
