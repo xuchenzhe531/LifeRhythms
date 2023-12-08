@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "lab5-milestone"
+rootProject.name = "LifeRhythms"
 include ':app'
