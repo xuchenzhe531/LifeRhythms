@@ -23,8 +23,6 @@ public class NotesActivity extends AppCompatActivity {
     private TextView welcomeTextView;
     public static ArrayList<Notes> note = new ArrayList<>();
     public static ArrayList<ToDo> calendar = new ArrayList<>();
-    private ArrayAdapter adapter;
-    private ArrayList<String> displayNotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +50,7 @@ public class NotesActivity extends AppCompatActivity {
         for (ToDo ca : calendar){
             displayNotes.add(String.format("Title:%s\nAdded Date:%s\nCalendar Date:%s\nStart Time:%s\nEnd Time:%s\nToDo:%s\nCategory:%s\n", ca.getTitle(), ca.getDate(),ca.getDesiredDate(),ca.getStartTime(),ca.getEndTime(),ca.getTodo(),ca.getCategory()));
         }
-//        ArrayList<String> displayNotes = new ArrayList<>();
-//        for (Notes note : note) {
-//            String content = note.getContent();
-//            String[] parts = content.split("\\*");
-//
-//            displayNotes.add(String.format("Title:%s\nAdded Date:%s\nCalendar Date:%s\nStart Time:%s\nEnd Time:%s\nToDo:%s\nCategory:%s\n", note.getTitle(), note.getDate(),parts[0],parts[1],parts[2],parts[3],parts[4]));
-//        }
+
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayNotes);
 
         ListView listView = findViewById(R.id.listView);
