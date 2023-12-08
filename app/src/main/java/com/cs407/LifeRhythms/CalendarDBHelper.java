@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 public class CalendarDBHelper {
     static SQLiteDatabase sqLiteDatabase;
+
     public CalendarDBHelper(SQLiteDatabase sqLiteDatabase) {
         this.sqLiteDatabase = sqLiteDatabase;
     }
