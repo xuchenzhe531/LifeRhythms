@@ -5,43 +5,33 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-
 import android.util.Log;
-
 import java.text.DateFormat;
+import java.util.Locale;
 
 public class noteWriting extends AppCompatActivity {
-    private EditText noteEditText;
     private EditText dateEditText;
     private EditText startTimeEditText;
     private EditText endTimeEditText;
     private EditText todoEditText;
     private Spinner categorySpinner;
-
-    private Button saveButton;
-    private Button deleteButton;
     public int noteid = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_note_writing);  // 设置对应的布局文件
+        setContentView(R.layout.activity_note_writing);
 
-        //noteEditText = findViewById(R.id.noteEditText);
-        saveButton = findViewById(R.id.saveButton);
-        deleteButton = findViewById(R.id.deleteButton);
+        Button saveButton = findViewById(R.id.saveButton);
+        Button deleteButton = findViewById(R.id.deleteButton);
 //*********************************************************
         dateEditText = findViewById(R.id.dateEditText);
         startTimeEditText = findViewById(R.id.startTimeEditText);
@@ -70,13 +60,11 @@ public class noteWriting extends AppCompatActivity {
             String StartTime;
             String endTime;
             String todo;
-            String category;
             String[] parts = noteContent.split("\\*");
             desireDate = parts[0];
             StartTime = parts[1];
             endTime = parts[2];
             todo = parts[3];
-            category = parts[4];
 
             dateEditText.setText(desireDate);
             startTimeEditText.setText(StartTime);
@@ -84,22 +72,8 @@ public class noteWriting extends AppCompatActivity {
             todoEditText.setText(todo);
         }
 
-
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveMethod();
-            }
-        });
-
-        Button deleteButton = findViewById(R.id.deleteButton);
-
-        deleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteMethod();
-            }
-        });
+        saveButton.setOnClickListener(v -> saveMethod());
+        deleteButton.setOnClickListener(v -> deleteMethod());
     }
 
     public void saveMethod() {
@@ -109,13 +83,7 @@ public class noteWriting extends AppCompatActivity {
         String endTime;
         String todo;
         String category;
-//        String[] parts = content.split("\\*");
-//        desireDate = parts[0];
-//        StartTime = parts[1];
-//        endTime = parts[2];
-//        todo = parts[3];
-//        category = parts[4];
-        desireDate = dateEditText.getText().toString();;
+        desireDate = dateEditText.getText().toString();
         StartTime = startTimeEditText.getText().toString();
         endTime = endTimeEditText.getText().toString();
         todo = todoEditText.getText().toString();
@@ -134,7 +102,7 @@ public class noteWriting extends AppCompatActivity {
         String username = sharedPreferences.getString("username", "");
 
         String title;
-        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss", Locale.US);
         String date = dateFormat.format(new Date());
 
         if (noteid == -1) {
@@ -168,13 +136,7 @@ public class noteWriting extends AppCompatActivity {
             String endTime;
             String todo;
             String category;
-//            String[] parts = content.split("\\*");
-//            desireDate = parts[0];
-//            StartTime = parts[1];
-//            endTime = parts[2];
-//            todo = parts[3];
-//            category = parts[4];
-            desireDate = dateEditText.getText().toString();;
+            desireDate = dateEditText.getText().toString();
             StartTime = startTimeEditText.getText().toString();
             endTime = endTimeEditText.getText().toString();
             todo = todoEditText.getText().toString();
