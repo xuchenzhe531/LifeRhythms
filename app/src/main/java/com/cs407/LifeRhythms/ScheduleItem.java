@@ -1,4 +1,4 @@
-package com.cs407.lab5_milestone;
+package com.cs407.LifeRhythms;
 
 public class ScheduleItem {
     private String date;

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.cs407.lab5_milestone'
+    namespace 'com.cs407.LifeRhythms'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.cs407.lab5_milestone"
+        applicationId "com.cs407.LifeRhythms"
         minSdk 26
         targetSdk 33
         versionCode 1

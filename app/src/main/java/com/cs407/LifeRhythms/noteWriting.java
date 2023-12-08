@@ -1,6 +1,4 @@
-package com.cs407.lab5_milestone;
-
-import static com.cs407.lab5_milestone.DBHelper.sqLiteDatabase;
+package com.cs407.LifeRhythms;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,27 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
 
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class noteWriting extends AppCompatActivity {
     private EditText noteEditText;

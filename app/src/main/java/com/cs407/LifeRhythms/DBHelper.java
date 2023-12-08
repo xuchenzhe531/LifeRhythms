@@ -1,4 +1,4 @@
-package com.cs407.lab5_milestone;
+package com.cs407.LifeRhythms;
 
 import java.util.ArrayList;
 import android.database.Cursor;

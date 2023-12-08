@@ -1,4 +1,4 @@
-package com.cs407.lab5_milestone;
+package com.cs407.LifeRhythms;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

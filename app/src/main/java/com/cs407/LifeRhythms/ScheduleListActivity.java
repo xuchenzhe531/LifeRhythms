@@ -1,4 +1,4 @@
-package com.cs407.lab5_milestone;
+package com.cs407.LifeRhythms;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.Calendar;
+
 import java.util.List;
 
 public class ScheduleListActivity extends AppCompatActivity {
