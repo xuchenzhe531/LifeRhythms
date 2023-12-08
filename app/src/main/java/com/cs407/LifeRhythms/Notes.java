@@ -2,10 +2,10 @@ package com.cs407.LifeRhythms;
 
 public class Notes {
 
-    private String date;
-    private String username;
-    private String title;
-    private String content;
+    private final String date;
+    private final String username;
+    private final String title;
+    private final String content;
 
     public Notes(String date, String username, String title, String content){
         this.date = date;
