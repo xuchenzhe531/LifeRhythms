@@ -9,7 +9,7 @@ public class DBHelper {
     static SQLiteDatabase sqLiteDatabase;
 
     public DBHelper(SQLiteDatabase sqLiteDatabase) {
-        this.sqLiteDatabase = sqLiteDatabase;
+        DBHelper.sqLiteDatabase = sqLiteDatabase;
     }
 
     public void createTable() {
