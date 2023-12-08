@@ -9,15 +9,13 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.List;
+import java.util.Locale;
 
 public class ScheduleListActivity extends AppCompatActivity {
 
     private DatePicker datePicker;
     private ListView listView;
-    private Button btnShowSchedule;
-    private Button btnBackToMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +24,15 @@ public class ScheduleListActivity extends AppCompatActivity {
 
         datePicker = findViewById(R.id.datePicker);
         listView = findViewById(R.id.lvSchedule);
-        btnShowSchedule = findViewById(R.id.btnShowSchedule);
-        btnBackToMain = findViewById(R.id.btnBackToMain);
+        Button btnShowSchedule = findViewById(R.id.btnShowSchedule);
+        Button btnBackToMain = findViewById(R.id.btnBackToMain);
 
         btnShowSchedule.setOnClickListener(v -> {
             int day = datePicker.getDayOfMonth();
             int month = datePicker.getMonth() + 1;
             int year = datePicker.getYear();
 
-            String selectedDate = String.format("%d/%02d/%02d", year, month, day);
+            String selectedDate = String.format(Locale.US, "%d/%02d/%02d", year, month, day);
             loadScheduleForDate(selectedDate);
         });
         btnBackToMain.setOnClickListener(view -> {

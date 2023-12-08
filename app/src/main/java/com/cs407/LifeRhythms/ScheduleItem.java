@@ -1,10 +1,10 @@
 package com.cs407.LifeRhythms;
 
 public class ScheduleItem {
-    private String date;
-    private String startTime;
-    private String endTime;
-    private String item;
+    private final String date;
+    private final String startTime;
+    private final String endTime;
+    private final String item;
     public ScheduleItem(String date, String startTime, String endTime, String item){
         this.date =date;
         this.startTime=startTime;
