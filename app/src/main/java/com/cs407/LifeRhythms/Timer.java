@@ -1,6 +1,5 @@
 package com.cs407.LifeRhythms;
 
-
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -11,10 +10,11 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Locale;
+
 public class Timer extends AppCompatActivity {
 
     private TimePicker timePicker;
-    private Button startButton;
     private MediaPlayer mediaPlayer;
     private TextView timeRemainingTextView;
 
@@ -24,7 +24,7 @@ public class Timer extends AppCompatActivity {
         setContentView(R.layout.activity_timer);
 
         timePicker = findViewById(R.id.timePicker);
-        startButton = findViewById(R.id.startButton);
+        Button startButton = findViewById(R.id.startButton);
         timeRemainingTextView = findViewById(R.id.timeRemainingTextView);
 
         timePicker.setIs24HourView(true);
@@ -43,7 +43,7 @@ public class Timer extends AppCompatActivity {
                         int hours = (int) (millisUntilFinished / 3600000);
                         int minutes = (int) (millisUntilFinished % 3600000) / 60000;
                         int secs = (int) (millisUntilFinished % 60000) / 1000;
-                        String time = String.format("%02d:%02d:%02d", hours, minutes, secs);
+                        String time = String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, minutes, secs);
                         timeRemainingTextView.setText(time);
                     }
 
@@ -87,6 +87,4 @@ public class Timer extends AppCompatActivity {
             mediaPlayer.release();
         }
     }
-
-
 }
