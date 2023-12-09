@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Lab5milestone"
         tools:targetApi="31">
         <activity
+            android:name=".Summary"
+            android:exported="false" />
+        <activity
             android:name=".ScheduleListActivity"
             android:exported="false" />
         <activity

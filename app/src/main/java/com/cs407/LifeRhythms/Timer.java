@@ -49,15 +49,12 @@ public class Timer extends AppCompatActivity {
                 }
             }.start();
         });
-        // 在 onCreate 方法中
 
-// 初始化返回按钮并设置点击事件
+        // 初始化返回按钮并设置点击事件
         Button backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> {
-            // 创建一个意图以启动 MainActivity
             Intent intent = new Intent(Timer.this, WelcomePage.class);
             startActivity(intent);
-            // 结束当前活动
             finish();
         });
 

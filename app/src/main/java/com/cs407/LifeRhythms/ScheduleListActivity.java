@@ -26,6 +26,7 @@ public class ScheduleListActivity extends AppCompatActivity {
         listView = findViewById(R.id.lvSchedule);
         Button btnShowSchedule = findViewById(R.id.btnShowSchedule);
         Button btnBackToMain = findViewById(R.id.btnBackToMain);
+        Button btnSummary = findViewById(R.id.btnSummary);
 
         btnShowSchedule.setOnClickListener(v -> {
             int day = datePicker.getDayOfMonth();
@@ -39,7 +40,10 @@ public class ScheduleListActivity extends AppCompatActivity {
             Intent intent = new Intent(this, WelcomePage.class);
             startActivity(intent);
         });
-
+        btnSummary.setOnClickListener(view -> {
+            Intent intent = new Intent(this, Summary.class);
+            startActivity(intent);
+        });
     }
 
     private void loadScheduleForDate(String date) {

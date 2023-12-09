@@ -79,7 +79,6 @@ public class NotesActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.add_note) {
-            // 实现添加笔记的代码
             Intent intent = new Intent(this, noteWriting.class);
             startActivity(intent);
             return true;
