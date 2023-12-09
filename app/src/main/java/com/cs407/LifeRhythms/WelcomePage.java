@@ -1,11 +1,9 @@
 package com.cs407.LifeRhythms;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
@@ -13,7 +11,6 @@ import android.widget.Toast;
 public class WelcomePage extends AppCompatActivity {
 
     private CheckBox checkBoxHealthy, checkBoxEnergized, checkBoxReady;
-    private Button buttonGoToWork, buttonShowMyWork, buttonStart;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -25,46 +22,34 @@ public class WelcomePage extends AppCompatActivity {
         checkBoxEnergized = findViewById(R.id.checkBoxEnergized);
         checkBoxReady = findViewById(R.id.checkBoxReady);
 
-        buttonGoToWork = findViewById(R.id.buttonGoToWork);
-        buttonShowMyWork = findViewById(R.id.buttonShowMyWork);
-        buttonStart = findViewById(R.id.buttonStart);
+        Button buttonGoToWork = findViewById(R.id.buttonGoToWork);
+        Button buttonShowMyWork = findViewById(R.id.buttonShowMyWork);
+        Button buttonStart = findViewById(R.id.buttonStart);
 
-        buttonGoToWork.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (allCheckBoxesChecked()) {
-                    // Launch an activity for GoToWork
-                    Intent intent = new Intent(WelcomePage.this, NotesActivity.class);
-                    startActivity(intent);
-                } else {
-                    showCheckboxWarning();
-                }
+        buttonGoToWork.setOnClickListener(v -> {
+            if (allCheckBoxesChecked()) {
+                Intent intent = new Intent(WelcomePage.this, NotesActivity.class);
+                startActivity(intent);
+            } else {
+                showCheckboxWarning();
             }
         });
 
-        buttonShowMyWork.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (allCheckBoxesChecked()) {
-                    // Launch an activity for ShowMyWork
-                    Intent intent = new Intent(WelcomePage.this, ScheduleListActivity.class);
-                    startActivity(intent);
-                } else {
-                    showCheckboxWarning();
-                }
+        buttonShowMyWork.setOnClickListener(v -> {
+            if (allCheckBoxesChecked()) {
+                Intent intent = new Intent(WelcomePage.this, ScheduleListActivity.class);
+                startActivity(intent);
+            } else {
+                showCheckboxWarning();
             }
         });
 
-        buttonStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (allCheckBoxesChecked()) {
-                    // Launch an activity for Start
-                    Intent intent = new Intent(WelcomePage.this, Timer.class);
-                    startActivity(intent);
-                } else {
-                    showCheckboxWarning();
-                }
+        buttonStart.setOnClickListener(v -> {
+            if (allCheckBoxesChecked()) {
+                Intent intent = new Intent(WelcomePage.this, Timer.class);
+                startActivity(intent);
+            } else {
+                showCheckboxWarning();
             }
         });
     }
