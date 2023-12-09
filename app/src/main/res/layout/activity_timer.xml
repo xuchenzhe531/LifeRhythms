@@ -24,6 +24,7 @@
         android:text="It is recommended that you could take a 10-minutes break after you work 40 minutes."
         android:textAlignment="center"
         android:textSize="18sp" />
+
     <TimePicker
         android:id="@+id/timePicker"
         android:layout_width="wrap_content"
