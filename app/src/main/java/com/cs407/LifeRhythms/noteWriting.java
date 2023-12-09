@@ -16,6 +16,7 @@ import java.util.Date;
 import android.util.Log;
 import java.text.DateFormat;
 import java.util.Locale;
+import java.text.ParseException;
 
 public class noteWriting extends AppCompatActivity {
     private EditText dateEditText;
@@ -88,6 +89,18 @@ public class noteWriting extends AppCompatActivity {
         endTime = endTimeEditText.getText().toString();
         todo = todoEditText.getText().toString();
         category = categorySpinner.getSelectedItem().toString();
+
+        if (!isValidDateFormat(desireDate)) {
+            Toast.makeText(this, "Invalid date format. Please use yyyy/MM/dd format.", Toast.LENGTH_SHORT).show();
+            return; // 阻止继续执行
+        }
+
+        // 验证时间格式
+        if (!isValidTimeFormat(StartTime) || !isValidTimeFormat(endTime)) {
+            Toast.makeText(this, "Invalid time format. Please use HH:mm format.", Toast.LENGTH_SHORT).show();
+            return; // 阻止继续执行
+        }
+
         String content = desireDate+"*"+StartTime+"*"+endTime+"*"+todo+"*"+category;
 
 
@@ -119,6 +132,28 @@ public class noteWriting extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    private boolean isValidDateFormat(String date) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd", Locale.US);
+        format.setLenient(false);
+        try {
+            Date parsedDate = format.parse(date);
+            return format.format(parsedDate).equals(date);
+        } catch (ParseException e) {
+            return false;
+        }
+    }
+
+    private boolean isValidTimeFormat(String time) {
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm", Locale.US);
+        try {
+            Date parsedTime = format.parse(time);
+            return format.format(parsedTime).equals(time);
+        } catch (ParseException e) {
+            return false;
+        }
+    }
+
 
     public void deleteMethod() {
         if (noteid != -1) {

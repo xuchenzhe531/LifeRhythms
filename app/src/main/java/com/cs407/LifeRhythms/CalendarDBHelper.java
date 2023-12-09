@@ -91,7 +91,39 @@ public class CalendarDBHelper {
         cursor.close();
 
         return scheduleItems;
-
-
     }
+
+    public List<ScheduleItem> getScheduleItemsForWeek(String startDate, String endDate) {
+        List<ScheduleItem> weekScheduleItems = new ArrayList<>();
+
+        // 确保这个 SQL 语句中的列名与数据库中的列名一致
+        String sql = "SELECT * FROM calendars WHERE date BETWEEN ? AND ?";
+        Cursor cursor = sqLiteDatabase.rawQuery(sql, new String[]{startDate, endDate});
+
+        // 获取每列的索引，确保这些列名在数据库中是存在的
+        int dateIndex = cursor.getColumnIndex("desiredDate");
+        int startTimeIndex = cursor.getColumnIndex("StartTime");
+        int endTimeIndex = cursor.getColumnIndex("EndTime");
+        int itemIndex = cursor.getColumnIndex("todo");
+
+        if (cursor.moveToFirst()) {
+            do {
+                // 使用索引从cursor中取出每一列的值
+                String date = cursor.getString(dateIndex);
+                String startTime = cursor.getString(startTimeIndex);
+                String endTime = cursor.getString(endTimeIndex);
+                String item = cursor.getString(itemIndex); // 这里假设您有一个名为 item 的列
+
+                // 使用取出的值创建 ScheduleItem 对象
+                ScheduleItem scheduleItem = new ScheduleItem(date, startTime, endTime, item);
+
+                // 将新创建的 ScheduleItem 对象添加到列表中
+                weekScheduleItems.add(scheduleItem);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return weekScheduleItems;
+    }
+
 }
