@@ -154,39 +154,49 @@ public class noteWriting extends AppCompatActivity {
         }
     }
 
-
     public void deleteMethod() {
         if (noteid != -1) {
             Context context = getApplicationContext();
-            SQLiteDatabase sqLiteDatabase = context.openOrCreateDatabase("notes", Context.MODE_PRIVATE, null);
-            DBHelper dbHelper = new DBHelper(sqLiteDatabase);
+            SQLiteDatabase sqLiteDatabase = null;
+            SQLiteDatabase sqLiteDatabaseC = null;
+            try {
+                sqLiteDatabase = context.openOrCreateDatabase("notes", Context.MODE_PRIVATE, null);
+                DBHelper dbHelper = new DBHelper(sqLiteDatabase);
 
-            SQLiteDatabase sqLiteDatabaseC = context.openOrCreateDatabase("calendars", Context.MODE_PRIVATE, null);
-            CalendarDBHelper CalendardbHelper = new CalendarDBHelper(sqLiteDatabaseC);
+                sqLiteDatabaseC = context.openOrCreateDatabase("calendars", Context.MODE_PRIVATE, null);
+                CalendarDBHelper CalendardbHelper = new CalendarDBHelper(sqLiteDatabaseC);
 
-            String title = "CALENDAR_" + (noteid + 1);
-            //String content = noteEditText.getText().toString();
-            String desireDate;
-            String StartTime;
-            String endTime;
-            String todo;
-            String category;
-            desireDate = dateEditText.getText().toString();
-            StartTime = startTimeEditText.getText().toString();
-            endTime = endTimeEditText.getText().toString();
-            todo = todoEditText.getText().toString();
-            category = categorySpinner.getSelectedItem().toString();
-            String content = desireDate+"*"+StartTime+"*"+endTime+"*"+todo+"*"+category;
+                String title = "CALENDAR_" + (noteid + 1);
+                String desireDate = dateEditText.getText().toString();
+                String StartTime = startTimeEditText.getText().toString();
+                String endTime = endTimeEditText.getText().toString();
+                String todo = todoEditText.getText().toString();
+                String category = categorySpinner.getSelectedItem().toString();
+                String content = desireDate + "*" + StartTime + "*" + endTime + "*" + todo + "*" + category;
 
-            dbHelper.deleteNotes(content, title);
-            CalendardbHelper.deleteCalendars(desireDate,StartTime,endTime,todo,category,title);
+                dbHelper.deleteNotes(title, content); // Assuming deleteNotes method requires title and content as parameters
+                CalendardbHelper.deleteCalendars(desireDate, StartTime, endTime, todo, category, title); // Assuming deleteCalendars method requires these parameters
+
+                Toast.makeText(this, "Note deleted successfully", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Toast.makeText(this, "Error deleting note", Toast.LENGTH_SHORT).show();
+                Log.e("noteWriting", "Error deleting note", e);
+            } finally {
+                if (sqLiteDatabase != null && sqLiteDatabase.isOpen()) {
+                    sqLiteDatabase.close();
+                }
+                if (sqLiteDatabaseC != null && sqLiteDatabaseC.isOpen()) {
+                    sqLiteDatabaseC.close();
+                }
+            }
 
             Intent intent = new Intent(this, NotesActivity.class);
             startActivity(intent);
+            finish();
         } else {
-            Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Note ID not found", Toast.LENGTH_SHORT).show();
         }
-        finish();
     }
+
 }
 
