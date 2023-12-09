@@ -2,7 +2,6 @@ package com.cs407.LifeRhythms;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 public class NotesActivity extends AppCompatActivity {
@@ -87,7 +85,7 @@ public class NotesActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.logout) {
             SharedPreferences sharedPreferences = getSharedPreferences("com.cs407.LifeRhythms", MODE_PRIVATE);
-            String username = sharedPreferences.getString("username", "");
+            //String username = sharedPreferences.getString("username", "");
             sharedPreferences.edit().clear().apply();
             Intent intent = new Intent(NotesActivity.this, MainActivity.class);
             startActivity(intent);
@@ -100,11 +98,7 @@ public class NotesActivity extends AppCompatActivity {
     }   else {
             return super.onOptionsItemSelected(item);
         }
-
-
     }
-
-
 
 }
 
