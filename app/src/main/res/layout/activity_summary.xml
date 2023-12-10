@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/back">
 
     <TextView
         android:id="@+id/studyCountTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Study Count:"
+        android:text="𝚂𝚝𝚞𝚍𝚢 𝙲𝚘𝚞𝚗𝚝:"
+        android:textColor="#B56456"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@id/breakCountTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +25,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Break Count:"
+        android:text="𝙱𝚛𝚎𝚊𝚔 𝙲𝚘𝚞𝚗𝚝:"
+        android:textColor="#B56456"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@id/workCountTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +38,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Work Count:"
+        android:text="𝚆𝚘𝚛𝚔 𝙲𝚘𝚞𝚗𝚝:"
+        android:textColor="#B56456"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@id/summaryButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,12 +49,34 @@
 
     <Button
         android:id="@+id/summaryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/button_2"
+        android:backgroundTintMode="add"
+        android:foreground="@drawable/button_2"
+        android:freezesText="false"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/workCountTextView" />
 
+    <TextView
+        android:id="@+id/st2"
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="153dp"
+        android:text="𝔹𝕒𝕔𝕜"
+        android:textColor="#F8F5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/summaryButton"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintLeft_toLeftOf="@+id/summaryButton"
+        app:layout_constraintRight_toRightOf="@+id/summaryButton"
+        app:layout_constraintStart_toStartOf="@+id/summaryButton"
+        app:layout_constraintTop_toBottomOf="@+id/studyCountTextView"
+        app:layout_constraintTop_toTopOf="@+id/summaryButton"
+        app:layout_constraintVertical_bias="0.6"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

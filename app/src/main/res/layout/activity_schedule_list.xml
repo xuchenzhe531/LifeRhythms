@@ -3,13 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/back">
 
     <DatePicker
         android:id="@+id/datePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:dayOfWeekBackground="#BF776E"
+        android:headerBackground="#BF776E"
+        android:yearListSelectorColor="#F1ECEC" />
 
     <!--    <Button-->
     <!--        android:id="@+id/btnShowSchedule"-->
@@ -17,38 +21,91 @@
     <!--        android:layout_height="wrap_content"-->
     <!--        android:text="Show Schedule"-->
     <!--        android:layout_gravity="center_horizontal"/>-->
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:layout_height="68dp"
+        android:orientation="horizontal">
+
 
         <Button
             android:id="@+id/btnShowSchedule"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="114dp"
+            android:layout_height="300dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:text="Show Schedule" />
+            android:background="@drawable/button_2"
+            android:backgroundTintMode="add"
+            android:foreground="@drawable/button_2"
+            android:freezesText="false"
+            android:text="𝕊𝕙𝕠𝕨 𝕊𝕔𝕙𝕖𝕕𝕦𝕝𝕖"
+            android:textColorHighlight="#D39A93"
+            android:textColorLink="#D39A93" />
+
+        <TextView
+            android:id="@+id/st1"
+            android:layout_width="86dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="9dp"
+            android:text="𝕊𝕙𝕠𝕨 𝕊𝕔𝕙𝕖𝕕𝕦𝕝𝕖"
+            android:textAlignment="center"
+            android:textColor="#F8F5F5" />
 
         <Button
             android:id="@+id/btnSummary"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="114dp"
+            android:layout_height="300dp"
+            android:layout_marginLeft="138dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:text="Plan summary" />
+            android:background="@drawable/button_2"
+            android:backgroundTintMode="add"
+            android:foreground="@drawable/button_2"
+            android:freezesText="false"
+            android:text="ℙ𝕝𝕒𝕟 𝕊𝕦𝕞𝕞𝕒𝕣𝕪" />
+
+        <TextView
+            android:id="@+id/st2"
+            android:layout_width="86dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="153dp"
+            android:layout_marginTop="9dp"
+            android:text="ℙ𝕝𝕒𝕟 𝕊𝕦𝕞𝕞𝕒𝕣𝕪"
+            android:textAlignment="center"
+            android:textColor="#F8F5F5" />
+
 
         <Button
             android:id="@+id/btnBackToMain"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="114dp"
+            android:layout_height="300dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
+            android:background="@drawable/button_2"
+            android:backgroundTintMode="add"
+            android:foreground="@drawable/button_2"
+            android:freezesText="false"
             android:text="Back To Main" />
-    </LinearLayout>
+
+        <TextView
+            android:id="@+id/st3"
+            android:layout_width="86dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="275dp"
+            android:layout_marginTop="9dp"
+            android:text="𝔹𝕒𝕔𝕜 𝕋𝕠 𝕄𝕒𝕚𝕟"
+            android:textAlignment="center"
+            android:textColor="#F8F5F5" />
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/lvSchedule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"/>
+        android:divider="#FAB4AB"
+        android:dividerHeight="1dp" />
+
 </LinearLayout>
