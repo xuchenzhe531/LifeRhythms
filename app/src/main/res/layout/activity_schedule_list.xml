@@ -1,117 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/back">
+    android:background="@drawable/back"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <DatePicker
         android:id="@+id/datePicker"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:dayOfWeekBackground="#BF776E"
         android:headerBackground="#BF776E"
-        android:yearListSelectorColor="#F1ECEC" />
+        android:yearListSelectorColor="#F1ECEC"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-    <!--    <Button-->
-    <!--        android:id="@+id/btnShowSchedule"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Show Schedule"-->
-    <!--        android:layout_gravity="center_horizontal"/>-->
+    <Button
+        android:id="@+id/btnShowSchedule"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:foreground="@drawable/button_2"
+        android:background="@drawable/button_2"
+        android:textColor="#F8F5F5"
+        android:text="𝕊𝕙𝕠𝕨 𝕊𝕔𝕙𝕖𝕕𝕦𝕝𝕖"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSummary"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:orientation="horizontal">
+    <Button
+        android:id="@+id/btnSummary"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:foreground="@drawable/button_2"
+        android:background="@drawable/button_2"
+        android:textColor="#F8F5F5"
+        android:text="ℙ𝕝𝕒𝕟 𝕊𝕦𝕞𝕞𝕒𝕣𝕪"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker"
+        app:layout_constraintStart_toEndOf="@+id/btnShowSchedule"
+        app:layout_constraintEnd_toStartOf="@+id/btnBackToMain"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"/>
 
+    <Button
+        android:id="@+id/btnBackToMain"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:foreground="@drawable/button_2"
+        android:background="@drawable/button_2"
+        android:textColor="#F8F5F5"
+        android:text="𝔹𝕒𝕔𝕜 𝕋𝕠 𝕄𝕒𝕚𝕟"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker"
+        app:layout_constraintStart_toEndOf="@+id/btnSummary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"/>
 
-        <Button
-            android:id="@+id/btnShowSchedule"
-            android:layout_width="114dp"
-            android:layout_height="300dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_2"
-            android:backgroundTintMode="add"
-            android:foreground="@drawable/button_2"
-            android:freezesText="false"
-            android:text="𝕊𝕙𝕠𝕨 𝕊𝕔𝕙𝕖𝕕𝕦𝕝𝕖"
-            android:textColorHighlight="#D39A93"
-            android:textColorLink="#D39A93" />
+    <TextView
+        android:id="@+id/tt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:text="𝕊𝕙𝕠𝕨 𝕊𝕔𝕙𝕖𝕕𝕦𝕝𝕖"
+        android:textColor="#F8F5F5"
+        app:layout_constraintBottom_toBottomOf="@+id/btnShowSchedule"
+        app:layout_constraintLeft_toLeftOf="@+id/btnShowSchedule"
+        app:layout_constraintRight_toRightOf="@+id/btnShowSchedule"
+        app:layout_constraintTop_toTopOf="@+id/btnShowSchedule"
+        app:layout_constraintVertical_bias="1.0"/>
 
-        <TextView
-            android:id="@+id/st1"
-            android:layout_width="86dp"
-            android:layout_height="41dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="9dp"
-            android:text="𝕊𝕙𝕠𝕨 𝕊𝕔𝕙𝕖𝕕𝕦𝕝𝕖"
-            android:textAlignment="center"
-            android:textColor="#F8F5F5"
-            android:clickable="false"
-            android:focusable="false"/>
+    <TextView
+        android:id="@+id/tt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:text="ℙ𝕝𝕒𝕟 𝕊𝕦𝕞𝕞𝕒𝕣𝕪"
+        android:textColor="#F8F5F5"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSummary"
+        app:layout_constraintLeft_toLeftOf="@+id/btnSummary"
+        app:layout_constraintRight_toRightOf="@+id/btnSummary"
+        app:layout_constraintTop_toTopOf="@+id/btnSummary"
+        app:layout_constraintVertical_bias="1.0"/>
 
-        <Button
-            android:id="@+id/btnSummary"
-            android:layout_width="114dp"
-            android:layout_height="300dp"
-            android:layout_marginLeft="138dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_2"
-            android:backgroundTintMode="add"
-            android:foreground="@drawable/button_2"
-            android:freezesText="false"
-            android:text="ℙ𝕝𝕒𝕟 𝕊𝕦𝕞𝕞𝕒𝕣𝕪" />
-
-        <TextView
-            android:id="@+id/st2"
-            android:layout_width="86dp"
-            android:layout_height="41dp"
-            android:layout_marginLeft="153dp"
-            android:layout_marginTop="9dp"
-            android:text="ℙ𝕝𝕒𝕟 𝕊𝕦𝕞𝕞𝕒𝕣𝕪"
-            android:textAlignment="center"
-            android:textColor="#F8F5F5"
-            android:clickable="false"
-            android:focusable="false"/>
-
-
-        <Button
-            android:id="@+id/btnBackToMain"
-            android:layout_width="114dp"
-            android:layout_height="300dp"
-            android:layout_marginLeft="260dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_2"
-            android:backgroundTintMode="add"
-            android:foreground="@drawable/button_2"
-            android:freezesText="false"
-            android:text="Back To Main" />
-
-        <TextView
-            android:id="@+id/st3"
-            android:layout_width="86dp"
-            android:layout_height="41dp"
-            android:layout_marginLeft="275dp"
-            android:layout_marginTop="9dp"
-            android:text="𝔹𝕒𝕔𝕜 𝕋𝕠 𝕄𝕒𝕚𝕟"
-            android:textAlignment="center"
-            android:textColor="#F8F5F5"
-            android:clickable="false"
-            android:focusable="false"/>
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/tt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:text="𝔹𝕒𝕔𝕜 𝕋𝕠 𝕄𝕒𝕚𝕟"
+        android:textColor="#F8F5F5"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBackToMain"
+        app:layout_constraintLeft_toLeftOf="@+id/btnBackToMain"
+        app:layout_constraintRight_toRightOf="@+id/btnBackToMain"
+        app:layout_constraintTop_toTopOf="@+id/btnBackToMain"
+        app:layout_constraintVertical_bias="1.0"/>
 
     <ListView
         android:id="@+id/lvSchedule"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:divider="#FAB4AB"
-        android:dividerHeight="1dp" />
+        android:dividerHeight="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnShowSchedule"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
