@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/back">
 
     <TextView
         android:id="@+id/textViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="Welcome to LifeRhythms"
-        android:textSize="30sp"
-        app:layout_constraintHorizontal_bias="0.493"
+        android:layout_width="352dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="28dp"
+        android:text="𝕎𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝕃𝕚𝕗𝕖ℝ𝕙𝕪𝕥𝕙𝕞𝕤"
+        android:textColor="#E49C8F"
+        android:textSize="29sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +26,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="228dp"
-        android:text="I am healthy"
+        android:buttonTint="#CA776D"
+        android:text="𝙸 𝚊𝚖 𝚑𝚎𝚊𝚕𝚝𝚑𝚢"
+        android:textColor="#CA776D"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -35,7 +40,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="I am energized"
+        android:buttonTint="#CA776D"
+        android:textColor="#CA776D"
+        android:text="𝙸 𝚊𝚖 𝚎𝚗𝚎𝚛𝚐𝚒𝚣𝚎𝚍"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -45,68 +52,106 @@
         android:id="@+id/checkBoxReady"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:buttonTint="#CA776D"
+        android:textColor="#CA776D"
         android:layout_marginTop="20dp"
-        android:text="I am ready"
+        android:text="𝙸 𝚊𝚖 𝚛𝚎𝚊𝚍𝚢"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/checkBoxEnergized" />
 
-    <Button
+
+    <ImageButton
         android:id="@+id/buttonStart"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="137dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="4dp"
+        android:background="#00F8F6F6"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/_379935"
         android:text="Start"
         android:textSize="30dp"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkBoxReady" />
+        app:layout_constraintTop_toBottomOf="@id/checkBoxReady"
+        tools:src="@drawable/_379935" />
 
     <Button
         android:id="@+id/buttonGoToWork"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="40dp"
+        android:foreground="@drawable/button_2"
+        android:background="@drawable/button_2"
+        android:backgroundTintMode="add"
+        android:freezesText="false"
         android:text="Go to Work"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="82dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginBottom="48dp"
+        android:text="𝔾𝕠 𝕥𝕠 𝕎𝕠𝕣𝕜"
+        android:textColor="#F8F5F5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/buttonShowMyWork"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="228dp"
         android:layout_marginBottom="40dp"
-        android:text="Show my work"
+        android:background="@drawable/button_2"
+        android:backgroundTintMode="add"
+        android:foreground="@drawable/button_2"
+        android:freezesText="false"
+        android:text="Go to Work"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="118dp"
+        android:layout_height="26dp"
+        android:layout_marginLeft="236dp"
+        android:layout_marginBottom="48dp"
+        android:text="𝕊𝕙𝕠𝕨 𝕞𝕪 𝕨𝕠𝕣𝕜"
+        android:textColor="#F8F5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="230dp"
-        android:layout_height="176dp"
+        android:layout_width="237dp"
+        android:layout_height="158dp"
         android:src="@drawable/healthy"
         app:layout_constraintBottom_toTopOf="@id/buttonStart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.419"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328" />
+        app:layout_constraintVertical_bias="0.348" />
 
     <TextView
         android:id="@+id/textViewCredits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Developed by Chenzhe Xu, Shaoyi Lu, Zhiqian Xu, Yamin Zhou"
-        android:textSize="14sp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/buttonShowMyWork"
+        android:text="Developed by Chenzhe Xu, Shaoyi Lu, Zhiqian Xu, Yamin Zhou"
+        android:textColor="#D1988A"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/buttonShowMyWork" />
     />
 
 
