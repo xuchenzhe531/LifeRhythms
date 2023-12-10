@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ListView;
@@ -56,6 +57,7 @@ public class ScheduleListActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("com.cs407.LifeRhythms", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "");
         List<ScheduleItem> scheduleItems = CalendardbHelper.getScheduleForDate(date, username);
+        Log.i("Checker", "ListLength: " + scheduleItems.size());
 
         // 使用适配器显示日程列表
         ScheduleAdapter adapter = new ScheduleAdapter(this, scheduleItems);

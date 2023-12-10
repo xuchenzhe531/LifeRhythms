@@ -4,14 +4,14 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="8dp"
-    android:background="@drawable/back">
+   >
 
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="𝔻𝕒𝕥𝕖"
+        android:text="Date"
         android:textColor="#C87465" />
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="𝕊𝕥𝕒𝕣𝕥"
+        android:text="Start"
         android:textColor="#C87465"/>
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="𝔼𝕟𝕕"
+        android:text="End"
         android:textColor="#C87465"/>
 
     <TextView
