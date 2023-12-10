@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back">
@@ -8,102 +9,112 @@
         android:id="@+id/timetrack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/creativeTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
         android:text="𝕎𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝕥𝕙𝕖 𝕋𝕚𝕞𝕖𝕣."
         android:textAlignment="center"
         android:textColor="#D39A93"
-        android:textSize="34sp" />
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/creativeTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/creativeTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_above="@id/timePicker"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:background="#EDB5AD"
         android:text="𝙸𝚝 𝚒𝚜 𝚛𝚎𝚌𝚘𝚖𝚖𝚎𝚗𝚍𝚎𝚍 𝚝𝚑𝚊𝚝 𝚢𝚘𝚞 𝚌𝚘𝚞𝚕𝚍 𝚝𝚊𝚔𝚎 𝚊 10-𝚖𝚒𝚗𝚞𝚝𝚎𝚜 𝚋𝚛𝚎𝚊𝚔 𝚊𝚏𝚝𝚎𝚛 𝚢𝚘𝚞 𝚠𝚘𝚛𝚔 40 𝚖𝚒𝚗𝚞𝚝𝚎𝚜."
         android:textAlignment="center"
         android:textColor="#F8F8F8"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:background="#EDB5AD"
+        app:layout_constraintTop_toBottomOf="@+id/timetrack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"/>
 
     <TimePicker
         android:id="@+id/timePicker"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
         android:amPmTextColor="#B58787"
         android:numbersBackgroundColor="#BF9898"
         android:numbersInnerTextColor="#D19393"
         android:numbersSelectorColor="#B57E7E"
         android:numbersTextColor="#AE8F8F"
-        android:timePickerMode="spinner" />
+        android:timePickerMode="spinner"
+        app:layout_constraintTop_toBottomOf="@+id/creativeTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="120dp"
         android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="40dp"
         android:foreground="@drawable/button_2"
         android:background="@drawable/button_2"
-        android:backgroundTintMode="add"
-        android:freezesText="false"
-        android:layout_below="@id/timePicker"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Start"/>
+        android:text="Start"
+        app:layout_constraintTop_toBottomOf="@+id/timePicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/tt1"
-        android:layout_width="82dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="188dp"
-        android:layout_marginTop="505dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/startButton"
+        android:layout_marginBottom="12dp"
+        android:clickable="false"
+        android:focusable="false"
         android:text="𝕊𝕥𝕒𝕣𝕥"
         android:textColor="#F8F5F5"
-        android:clickable="false"
-        android:focusable="false" />
+        app:layout_constraintBottom_toBottomOf="@+id/startButton"
+        app:layout_constraintLeft_toLeftOf="@+id/startButton"
+        app:layout_constraintRight_toRightOf="@+id/startButton"
+        app:layout_constraintTop_toTopOf="@+id/startButton"
+        app:layout_constraintVertical_bias="1.0"/>
 
     <TextView
         android:id="@+id/timeRemainingTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/startButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:text="𝚁𝚎𝚖𝚊𝚒𝚗𝚒𝚗𝚐: 00:00:00"
         android:textSize="18sp"
         android:textColor="#D39A93"
-        android:text="𝚁𝚎𝚖𝚊𝚒𝚗𝚒𝚗𝚐: 00:00:00"/>
+        app:layout_constraintTop_toBottomOf="@+id/startButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"/>
+
     <Button
         android:id="@+id/backButton"
         android:layout_width="120dp"
         android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="40dp"
         android:foreground="@drawable/button_2"
         android:background="@drawable/button_2"
-        android:backgroundTintMode="add"
-        android:freezesText="false"
-        android:layout_below="@id/timeRemainingTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="𝔹𝕒𝕔𝕜"/>
+        android:text="𝔹𝕒𝕔𝕜"
+        app:layout_constraintTop_toBottomOf="@+id/timeRemainingTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"/>
+
     <TextView
         android:id="@+id/tt2"
-        android:layout_width="82dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="188dp"
-        android:layout_marginTop="658dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
         android:text="𝔹𝕒𝕔𝕜"
         android:textColor="#F8F5F5"
-        android:clickable="false"
-        android:focusable="false"/>
+        android:layout_marginBottom="12dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/backButton"
+        app:layout_constraintLeft_toLeftOf="@+id/backButton"
+        app:layout_constraintRight_toRightOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="@+id/backButton"
+        app:layout_constraintVertical_bias="1.0" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
