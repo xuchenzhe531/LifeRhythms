@@ -51,7 +51,9 @@
             android:layout_marginTop="9dp"
             android:text="𝕊𝕙𝕠𝕨 𝕊𝕔𝕙𝕖𝕕𝕦𝕝𝕖"
             android:textAlignment="center"
-            android:textColor="#F8F5F5" />
+            android:textColor="#F8F5F5"
+            android:clickable="false"
+            android:focusable="false"/>
 
         <Button
             android:id="@+id/btnSummary"
@@ -74,7 +76,9 @@
             android:layout_marginTop="9dp"
             android:text="ℙ𝕝𝕒𝕟 𝕊𝕦𝕞𝕞𝕒𝕣𝕪"
             android:textAlignment="center"
-            android:textColor="#F8F5F5" />
+            android:textColor="#F8F5F5"
+            android:clickable="false"
+            android:focusable="false"/>
 
 
         <Button
@@ -98,7 +102,9 @@
             android:layout_marginTop="9dp"
             android:text="𝔹𝕒𝕔𝕜 𝕋𝕠 𝕄𝕒𝕚𝕟"
             android:textAlignment="center"
-            android:textColor="#F8F5F5" />
+            android:textColor="#F8F5F5"
+            android:clickable="false"
+            android:focusable="false"/>
     </RelativeLayout>
 
     <ListView

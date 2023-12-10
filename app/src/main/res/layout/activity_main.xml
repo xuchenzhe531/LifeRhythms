@@ -63,6 +63,8 @@
         app:layout_constraintLeft_toLeftOf="@+id/login"
         app:layout_constraintRight_toRightOf="@+id/login"
         app:layout_constraintTop_toTopOf="@+id/login"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:clickable="false"
+        android:focusable="false"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

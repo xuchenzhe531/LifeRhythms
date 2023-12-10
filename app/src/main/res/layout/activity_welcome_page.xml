@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@drawable/back">
+    android:background="@drawable/back"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/textViewTitle"
@@ -13,7 +13,7 @@
         android:layout_height="59dp"
         android:layout_marginTop="28dp"
         android:text="𝕎𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝕃𝕚𝕗𝕖ℝ𝕙𝕪𝕥𝕙𝕞𝕤"
-        android:textColor="#E49C8F"
+        android:textColor="#D39A93"
         android:textSize="29sp"
         android:textStyle="bold"
         app:layout_constraintHorizontal_bias="0.474"
@@ -41,8 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:buttonTint="#CA776D"
-        android:textColor="#CA776D"
         android:text="𝙸 𝚊𝚖 𝚎𝚗𝚎𝚛𝚐𝚒𝚣𝚎𝚍"
+        android:textColor="#CA776D"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -52,10 +52,10 @@
         android:id="@+id/checkBoxReady"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:buttonTint="#CA776D"
-        android:textColor="#CA776D"
         android:layout_marginTop="20dp"
+        android:buttonTint="#CA776D"
         android:text="𝙸 𝚊𝚖 𝚛𝚎𝚊𝚍𝚢"
+        android:textColor="#CA776D"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -84,9 +84,9 @@
         android:layout_height="48dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="40dp"
-        android:foreground="@drawable/button_2"
         android:background="@drawable/button_2"
         android:backgroundTintMode="add"
+        android:foreground="@drawable/button_2"
         android:freezesText="false"
         android:text="Go to Work"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -96,12 +96,14 @@
         android:id="@+id/t1"
         android:layout_width="82dp"
         android:layout_height="24dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:clickable="false"
+        android:focusable="false"
         android:text="𝔾𝕠 𝕥𝕠 𝕎𝕠𝕣𝕜"
         android:textColor="#F8F5F5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintRight_toRightOf="@+id/buttonGoToWork"
+        app:layout_constraintTop_toTopOf="@+id/buttonGoToWork" />
 
     <Button
         android:id="@+id/buttonShowMyWork"
@@ -119,26 +121,30 @@
 
     <TextView
         android:id="@+id/t2"
-        android:layout_width="118dp"
-        android:layout_height="26dp"
-        android:layout_marginLeft="236dp"
-        android:layout_marginBottom="48dp"
+        android:layout_width="106dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="4dp"
+        android:clickable="false"
+        android:focusable="false"
         android:text="𝕊𝕙𝕠𝕨 𝕞𝕪 𝕨𝕠𝕣𝕜"
         android:textColor="#F8F5F5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintRight_toRightOf="@+id/buttonShowMyWork"
+        app:layout_constraintTop_toTopOf="@+id/buttonShowMyWork" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="237dp"
         android:layout_height="158dp"
+        android:clickable="false"
+        android:focusable="false"
         android:src="@drawable/healthy"
-        app:layout_constraintBottom_toTopOf="@id/buttonStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.419"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.348" />
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="112dp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxHealthy"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewTitle"
+        app:layout_constraintRight_toRightOf="@+id/textViewTitle"/>
 
     <TextView
         android:id="@+id/textViewCredits"

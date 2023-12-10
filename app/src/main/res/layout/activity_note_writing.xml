@@ -79,12 +79,13 @@
         android:text="𝕊𝕒𝕧𝕖"
         android:textAlignment="center"
         android:textColor="#F8F5F5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.243"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintBottom_toBottomOf="@+id/saveButton"
+        app:layout_constraintLeft_toLeftOf="@+id/saveButton"
+        app:layout_constraintRight_toRightOf="@+id/saveButton"
+        app:layout_constraintTop_toTopOf="@+id/saveButton"
+        app:layout_constraintVertical_bias="2.0"
+        android:clickable="false"
+        android:focusable="false" />
 
     <Button
         android:id="@+id/deleteButton"
@@ -109,12 +110,13 @@
         android:text="𝔻𝕖𝕝𝕖𝕥𝕖"
         android:textAlignment="center"
         android:textColor="#F8F5F5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.806"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintBottom_toBottomOf="@+id/deleteButton"
+        app:layout_constraintLeft_toLeftOf="@+id/deleteButton"
+        app:layout_constraintRight_toRightOf="@+id/deleteButton"
+        app:layout_constraintTop_toTopOf="@+id/deleteButton"
+        app:layout_constraintVertical_bias="2.0"
+        android:clickable="false"
+        android:focusable="false" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

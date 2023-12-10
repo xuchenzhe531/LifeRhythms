@@ -67,7 +67,9 @@
         android:layout_marginLeft="188dp"
         android:layout_marginTop="505dp"
         android:text="𝕊𝕥𝕒𝕣𝕥"
-        android:textColor="#F8F5F5" />
+        android:textColor="#F8F5F5"
+        android:clickable="false"
+        android:focusable="false" />
 
     <TextView
         android:id="@+id/timeRemainingTextView"
@@ -100,6 +102,8 @@
         android:layout_marginLeft="188dp"
         android:layout_marginTop="658dp"
         android:text="𝔹𝕒𝕔𝕜"
-        android:textColor="#F8F5F5" />
+        android:textColor="#F8F5F5"
+        android:clickable="false"
+        android:focusable="false"/>
 
 </RelativeLayout>
