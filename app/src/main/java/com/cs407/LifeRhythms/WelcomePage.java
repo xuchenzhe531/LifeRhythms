@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class WelcomePage extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class WelcomePage extends AppCompatActivity {
 
         Button buttonGoToWork = findViewById(R.id.buttonGoToWork);
         Button buttonShowMyWork = findViewById(R.id.buttonShowMyWork);
-        Button buttonStart = findViewById(R.id.buttonStart);
+        ImageButton buttonStart = findViewById(R.id.buttonStart);
 
         buttonGoToWork.setOnClickListener(v -> {
             if (allCheckBoxesChecked()) {
